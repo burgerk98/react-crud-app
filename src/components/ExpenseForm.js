@@ -1,7 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './ExpenseForm.css'
+import { MdSend } from 'react-icons/md'; // MdSend 아이콘 import
 
-const ExpenseForm = ({charge, handleCharge, amount, handleAmount, handleSubmit}) => {
+
+const ExpenseForm = ({charge, handleCharge, amount, handleAmount, handleSubmit, edit }) => {
 // export default class ExpenseForm extends Component {
   // render() {
     return (
@@ -33,7 +35,8 @@ const ExpenseForm = ({charge, handleCharge, amount, handleAmount, handleSubmit})
           </div>
         </div>
         <button type='submit' className='btn'>
-          제출
+          {edit ? '수정': "제출"}
+          <MdSend className='btn-icon' />
         </button>
       </form>
     )
